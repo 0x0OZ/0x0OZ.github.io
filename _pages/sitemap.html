@@ -1,0 +1,46 @@
+---
+layout: single
+permalink: /sitemap.html
+sitemap:
+exclude: 'yes'
+
+---
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 20px;
+    }
+
+    h1 {
+        color: #333;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    p {
+        color: #666;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    /* Add more styles as needed */
+</style>
+
+{% assign sitemap = site.pages | sort: 'url' %}
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    {% for page in sitemap %}
+    {% if page.sitemap != "exclude" %}
+    <url>
+        <loc>{{ site.url }}{{ page.url | remove: "index.html" }}</loc>
+        <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <br />
+    {% endif %}
+    {% endfor %}
+</urlset>
