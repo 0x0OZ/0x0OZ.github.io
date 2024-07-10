@@ -3,7 +3,7 @@ layout: single
 permalink: /sitemap/
 sitemap:
 exclude: 'yes'
-
+title: Sitemap
 ---
 
 <style>
@@ -40,14 +40,15 @@ exclude: 'yes'
 
 <h1>Sitemap</h1>
 
-<p>This is a sitemap containing all pages on this website. XML sitemap version is also available at <a href="{{ site.url }}/sitemap.xml">/sitemap.xml</a>.</p>
+<p>This is a sitemap containing all pages on this website. XML sitemap version is also available at <a
+        href="{{ site.url }}/sitemap.xml">/sitemap.xml</a>.</p>
 
 
 {% assign sitemap = site.pages | sort: 'url' %}
 <ul>
     {% for page in sitemap %}
     {% if page.sitemap != "exclude" %}
-    {% if page.title != %}
+    {% if page.title != none %}
     <li><a href="{{ site.url }}{{ page.url  }}">{{ page.title }}</a></li>
     {% endif %}
     {% endif %}

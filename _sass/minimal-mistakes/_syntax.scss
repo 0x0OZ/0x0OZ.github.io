@@ -22,6 +22,9 @@ figure.highlight {
   pre.highlight {
     margin: 0;
     padding: 1em;
+    // set max-height to prevent large code blocks from consuming the entire viewport
+    max-height: 100vh;
+    overflow: auto;
   }
 }
 
