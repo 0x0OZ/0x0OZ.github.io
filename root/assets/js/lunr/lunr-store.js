@@ -6,7 +6,7 @@ var store = [{
         "teaser": null
       },{
         "title": "NCSC Training 2024 Writeups",
-        "excerpt":"NCSC Training 2024 Writeups Web Robot Challenge Description A Web crawler, sometimes called a robot, is an Internet bot that systematically browses the World Wide Web and that is typically operated by search engines for the purpose of Web indexing. Solution The challenge is a simple robots.txt as the name...","categories": [],
+        "excerpt":"Web Robot Challenge Description A Web crawler, sometimes called a robot, is an Internet bot that systematically browses the World Wide Web and that is typically operated by search engines for the purpose of Web indexing. Solution The challenge is a simple robots.txt as the name says, we can see...","categories": [],
         "tags": [],
         "url": "/writeups/ncsc-training-2024",
         "teaser": null
