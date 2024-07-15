@@ -1,1 +1,1 @@
-Sitemap: https://0x0oz.github.io/sitemap.xml
+Sitemap: http://0.0.0.0/sitemap.xml
