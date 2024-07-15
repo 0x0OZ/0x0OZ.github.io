@@ -6,8 +6,8 @@ var store = [{
         "teaser": null
       },{
         "title": "NCSC Training 2024 Writeups",
-        "excerpt":"Those are writeups for the challenges of the NCSC Training 2024 CTF, the CTF was held on 11th July 2024 to 13th July 2024. Web Robot Challenge Description A Web crawler, sometimes called a robot, is an Internet bot that systematically browses the World Wide Web and that is typically...","categories": [],
-        "tags": [],
+        "excerpt":"Those are writeups for the challenges of the NCSC Training 2024 CTF, the CTF was held on 11th July 2024 to 13th July 2024. Writeups Web Robot Challenge Description A Web crawler, sometimes called a robot, is an Internet bot that systematically browses the World Wide Web and that is...","categories": ["CTF","Writeups"],
+        "tags": ["ctf","writeups","ncsc-training-2024"],
         "url": "/writeups/ncsc-training-2024",
         "teaser": null
       },]

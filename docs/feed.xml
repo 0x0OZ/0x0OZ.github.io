@@ -1,14 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://0x0oz.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://0x0oz.github.io/" rel="alternate" type="text/html" /><updated>2024-07-15T12:08:22+03:00</updated><id>https://0x0oz.github.io/feed.xml</id><title type="html">0xOZ</title><subtitle>Security Researcher notes</subtitle><author><name>Ahmad Abuzaid</name><email>iiahmad435@gmail.com</email></author><entry><title type="html">NCSC Training 2024 Writeups</title><link href="https://0x0oz.github.io/writeups/ncsc-training-2024" rel="alternate" type="text/html" title="NCSC Training 2024 Writeups" /><published>2024-07-13T00:00:00+03:00</published><updated>2024-07-13T00:00:00+03:00</updated><id>https://0x0oz.github.io/writeups/ncsc-training-2024</id><content type="html" xml:base="https://0x0oz.github.io/writeups/ncsc-training-2024"><![CDATA[<p>Those are writeups for the challenges of the NCSC Training 2024 CTF, the CTF was held on 11th July 2024 to 13th July 2024.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://0x0oz.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://0x0oz.github.io/" rel="alternate" type="text/html" /><updated>2024-07-15T15:35:50+03:00</updated><id>https://0x0oz.github.io/feed.xml</id><title type="html">0xOZ</title><subtitle>Security Researcher notes</subtitle><author><name>Ahmad Abuzaid</name><email>iiahmad435@gmail.com</email></author><entry><title type="html">NCSC Training 2024 Writeups</title><link href="https://0x0oz.github.io/writeups/ncsc-training-2024" rel="alternate" type="text/html" title="NCSC Training 2024 Writeups" /><published>2024-07-13T00:00:00+03:00</published><updated>2024-07-13T00:00:00+03:00</updated><id>https://0x0oz.github.io/writeups/ncsc-training-2024</id><content type="html" xml:base="https://0x0oz.github.io/writeups/ncsc-training-2024"><![CDATA[<p>Those are writeups for the challenges of the NCSC Training 2024 CTF, the CTF was held on 11th July 2024 to 13th July 2024.</p>
+
+<h1 id="writeups">Writeups</h1>
 
 <h2 id="web">Web</h2>
 
 <h3 id="robot">Robot</h3>
 
-<h6 id="challenge-description">Challenge Description</h6>
+<h4 id="challenge-description">Challenge Description</h4>
 
 <p>A Web crawler, sometimes called a robot, is an Internet bot that systematically browses the World Wide Web and that is typically operated by search engines for the purpose of Web indexing.</p>
 
-<h6 id="solution">Solution</h6>
+<h4 id="solution">Solution</h4>
 
 <p>The challenge is a simple <code class="language-plaintext highlighter-rouge">robots.txt</code> as the name says, we can see <code class="language-plaintext highlighter-rouge">Disallow: /always_read_robots.txt</code> in the <code class="language-plaintext highlighter-rouge">robots.txt</code> file. So, we can access the <code class="language-plaintext highlighter-rouge">always_read_robots.txt</code> file and get the flag.</p>
 
@@ -16,11 +18,11 @@
 
 <h3 id="privilege">Privilege</h3>
 
-<h6 id="challenge-description-1">Challenge Description</h6>
+<h4 id="challenge-description-1">Challenge Description</h4>
 
 <p>Cookies are a widely used way to enable authentication in many of the applications out there.</p>
 
-<h6 id="solution-1">Solution</h6>
+<h4 id="solution-1">Solution</h4>
 
 <p>The challenge is a simple cookie manipulation challenge. We can see the cookie <code class="language-plaintext highlighter-rouge">admin=false</code> in the browser. We can change the value of the cookie to <code class="language-plaintext highlighter-rouge">true</code> and get the flag.</p>
 
@@ -28,11 +30,11 @@
 
 <h3 id="injectxec">InjectXec</h3>
 
-<h6 id="challenge-description-2">Challenge description</h6>
+<h4 id="challenge-description-2">Challenge description</h4>
 
 <p>&lt; No Description Provided &gt;</p>
 
-<h6 id="solution-2">Solution</h6>
+<h4 id="solution-2">Solution</h4>
 
 <p>It was a simple command injection, we can escape the <code class="language-plaintext highlighter-rouge">figlet</code> command context to pass any system commands using a semi-colon <code class="language-plaintext highlighter-rouge">;</code>. The source code  looked like this when I extracted it:</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
@@ -73,11 +75,11 @@
 
 <h3 id="file-hunt">File Hunt</h3>
 
-<h6 id="challenge-description-3">Challenge Description</h6>
+<h4 id="challenge-description-3">Challenge Description</h4>
 
 <p>Read the <code class="language-plaintext highlighter-rouge">flag.txt</code> in <code class="language-plaintext highlighter-rouge">home</code> directory of unknown user</p>
 
-<h6 id="solution-3">Solution</h6>
+<h4 id="solution-3">Solution</h4>
 
 <p>The challenge is a basic LFI, we will see some links that op and some other pages which is vulnerable to LFI, we can read the current users by accessing the <code class="language-plaintext highlighter-rouge">etc/passwd</code> file and then read the <code class="language-plaintext highlighter-rouge">flag.txt</code> file in the <code class="language-plaintext highlighter-rouge">home</code> directory of <code class="language-plaintext highlighter-rouge">john</code> user that we will find there.</p>
 
@@ -85,11 +87,11 @@
 
 <h3 id="method">Method</h3>
 
-<h6 id="challenge-description-4">Challenge Description</h6>
+<h4 id="challenge-description-4">Challenge Description</h4>
 
 <p>HTTP defines a set of request methods to indicate the desired action to be performed for a given resource.</p>
 
-<h6 id="solution-4">Solution</h6>
+<h4 id="solution-4">Solution</h4>
 
 <p>The index pages open with an empty page that only has “Nothing Here” text, nothing in interesting in the page source too. So, I tried to access the <code class="language-plaintext highlighter-rouge">robots.txt</code> file and found the <code class="language-plaintext highlighter-rouge">Disallow: /index.php.bak</code>. Inside <code class="language-plaintext highlighter-rouge">index.php.bak</code> we found the following code:</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span> 
@@ -120,11 +122,11 @@
 
 <h3 id="backdoor">Backdoor</h3>
 
-<h6 id="challenge-description-5">Challenge Description</h6>
+<h4 id="challenge-description-5">Challenge Description</h4>
 
 <p>&lt; No Description Provided &gt;</p>
 
-<h6 id="solution-5">Solution</h6>
+<h4 id="solution-5">Solution</h4>
 
 <p>This challenge was more fun than any other of the basic challenges in the CTF, the website index pages have a simple heading that says <strong><em>*Welcome Bro, What is your name?*</em></strong>, and nothing else around, not in the source and the robots or anywhere. So, I tried to look for any hidden files/directories and didn’t find anything, then I tried to fuzz any possible parameters in the index page, which also found nothing from the quick search.</p>
 
@@ -210,12 +212,12 @@ But it here is another funny thing, we can do the same command injection techniq
 
 <h3 id="activity">Activity</h3>
 
-<h6 id="challenge-description-6">Challenge Description</h6>
+<h4 id="challenge-description-6">Challenge Description</h4>
 
 <p>Our DFIR team has detected potinal of SQL injection attack
 Can you help us revels the attacker message ?</p>
 
-<h6 id="solution-6">Solution</h6>
+<h4 id="solution-6">Solution</h4>
 
 <p>The flag is the decode characters of the SQLi payload that is in the log file given</p>
 
@@ -227,41 +229,41 @@ Can you help us revels the attacker message ?</p>
 
 <h3 id="traffic">Traffic</h3>
 
-<h6 id="challenge-description-7">Challenge Description</h6>
+<h4 id="challenge-description-7">Challenge Description</h4>
 
 <p>Network traffic or data traffic is the amount of data moving across a network at a given point of time.</p>
 
-<h6 id="solution-7">Solution</h6>
+<h4 id="solution-7">Solution</h4>
 
 <p>The challenge is a simple PCAP analysis, we can see the flag base64 encoded in one of the HTTP requests.</p>
 
 <p><img src="/assets/images/ncsc-training-writeups/ncsc-training-2024-traffic.png" alt="ncsc-training-traffic" /></p>
 
 <h3 id="recover">Recover</h3>
-<h6 id="challenge-description-8">Challenge Description</h6>
+<h4 id="challenge-description-8">Challenge Description</h4>
 <p>File carving is a great method for recovering files and fragments of files when directory entries are corrupt or missing</p>
 
-<h6 id="solution-8">Solution</h6>
+<h4 id="solution-8">Solution</h4>
 
 <p>The challenge is a simple file carving challenge, we can use <code class="language-plaintext highlighter-rouge">foremost</code> to carve the flag from the given image.</p>
 
 <p><img src="/assets/images/ncsc-training-writeups/ncsc-training-2024-recover.png" alt="ncsc-training-recover" /></p>
 
 <h3 id="meta">Meta</h3>
-<h6 id="challenge-description-9">Challenge Description</h6>
+<h4 id="challenge-description-9">Challenge Description</h4>
 <p>Find the `Creator of the image to get the flag 🙂</p>
 
-<h6 id="solution-9">Solution</h6>
+<h4 id="solution-9">Solution</h4>
 
 <p>The challenge is a simple metadata analysis challenge, we can use <code class="language-plaintext highlighter-rouge">exiftool</code> to get the metadata of the image and get the flag.</p>
 
 <p><img src="/assets/images/ncsc-training-writeups/ncsc-training-2024-meta.png" alt="ncsc-training-meta" /></p>
 
 <h3 id="fix">FIX</h3>
-<h6 id="challenge-description-10">Challenge Description</h6>
+<h4 id="challenge-description-10">Challenge Description</h4>
 <p>I believe you can repair the damage to the image.</p>
 
-<h6 id="solution-10">Solution</h6>
+<h4 id="solution-10">Solution</h4>
 
 <p>This challenge has a corrupted image, if we look at the hexdump of the file we will find a pattern of number <code class="language-plaintext highlighter-rouge">7</code> being repeated every one character in the file data, we can remove the <code class="language-plaintext highlighter-rouge">7</code> characters from the file and we will get a valid image file.</p>
 
@@ -291,12 +293,12 @@ Can you help us revels the attacker message ?</p>
 <h2 id="cryptography">Cryptography</h2>
 
 <h3 id="vigenvault">VigenVault</h3>
-<h6 id="challenge-description-11">Challenge Description</h6>
+<h4 id="challenge-description-11">Challenge Description</h4>
 <p>Uncover the final message that reveals the secret of the VigenVault.</p>
 
 <p>The cipher is XGQM{Zgqilovc_Mmnrip_dcno_sd_cckwirbma_orabcndmmx_:t}</p>
 
-<h6 id="solution-11">Solution</h6>
+<h4 id="solution-11">Solution</h4>
 
 <p>The challenge is a simple Vigenere cipher, we can use an online <a href="https://www.dcode.fr/vigenere-cipher">tool</a> to decrypt the message and get the flag.</p>
 
@@ -304,10 +306,10 @@ Can you help us revels the attacker message ?</p>
 
 <h3 id="simple-math">Simple Math</h3>
 
-<h6 id="challenge-description-12">Challenge Description</h6>
+<h4 id="challenge-description-12">Challenge Description</h4>
 <p>Solve this cipher by sharpening your Python coding skills. Build the right script, and unlock the secrets within.</p>
 
-<h6 id="solution-12">Solution</h6>
+<h4 id="solution-12">Solution</h4>
 
 <p>We got a script that does some math operations on message to generate cipher text, interestingly the script also has the reverse of those operations (decipher) so we just need to run the file to get the flag:</p>
 <div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">Crypto.Util.number</span> <span class="kn">import</span> <span class="o">*</span>
@@ -325,14 +327,16 @@ Can you help us revels the attacker message ?</p>
 
 <span class="n">ff</span> <span class="o">=</span> <span class="p">(((</span><span class="mi">1848786658073065839007547107151090372652500805755396861145584876406219134322720000</span><span class="o">//</span><span class="mi">500</span><span class="p">)</span><span class="o">+</span><span class="mi">100</span><span class="p">)</span><span class="o">//</span><span class="mi">20</span><span class="p">)</span><span class="o">//</span><span class="mi">1337</span>
 <span class="nf">print</span><span class="p">(</span><span class="nf">long_to_bytes</span><span class="p">(</span><span class="n">ff</span><span class="p">))</span>
-</code></pre></div></div>]]></content><author><name>Ahmad Abuzaid</name><email>iiahmad435@gmail.com</email></author><summary type="html"><![CDATA[Those are writeups for the challenges of the NCSC Training 2024 CTF, the CTF was held on 11th July 2024 to 13th July 2024.]]></summary></entry><entry><title type="html">MetaCTF v5 2024 Writeups</title><link href="https://0x0oz.github.io/writeups/metactf-v5-2024" rel="alternate" type="text/html" title="MetaCTF v5 2024 Writeups" /><published>2024-07-10T00:00:00+03:00</published><updated>2024-07-10T00:00:00+03:00</updated><id>https://0x0oz.github.io/writeups/metactf-v5</id><content type="html" xml:base="https://0x0oz.github.io/writeups/metactf-v5-2024"><![CDATA[<p>Writeups for the MetaCTF v5 2024 CTF Web Challenges that was held on 30th June 2024.</p>
+</code></pre></div></div>]]></content><author><name>Ahmad Abuzaid</name><email>iiahmad435@gmail.com</email></author><category term="CTF" /><category term="Writeups" /><category term="ctf" /><category term="writeups" /><category term="ncsc-training-2024" /><summary type="html"><![CDATA[Those are writeups for the challenges of the NCSC Training 2024 CTF, the CTF was held on 11th July 2024 to 13th July 2024.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://0x0oz.github.io/assets/images/ncsc-training-writeups/ncsc-training-2024.jpg" /><media:content medium="image" url="https://0x0oz.github.io/assets/images/ncsc-training-writeups/ncsc-training-2024.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">MetaCTF v5 2024 Writeups</title><link href="https://0x0oz.github.io/writeups/metactf-v5-2024" rel="alternate" type="text/html" title="MetaCTF v5 2024 Writeups" /><published>2024-07-10T00:00:00+03:00</published><updated>2024-07-10T00:00:00+03:00</updated><id>https://0x0oz.github.io/writeups/metactf-v5</id><content type="html" xml:base="https://0x0oz.github.io/writeups/metactf-v5-2024"><![CDATA[<p>Writeups for the MetaCTF v5 2024 CTF Web Challenges that was held on 30th June 2024.</p>
 
 <h2 id="pythons-twister">Python’s Twister</h2>
 
-<h6 id="challenge-description">Challenge Description</h6>
+<h3 id="challenge-description">Challenge Description</h3>
+
 <p>Hack our admin.</p>
 
-<h6 id="solution">Solution</h6>
+<h3 id="solution">Solution</h3>
+
 <p>The challenge is a simple flask application that has register/login/pass-reset functionalities. The app generates 10000 random numbers and assigns one to each user when registered as a reset token, the admin has the reset token with index 1499. The flag is stored in an environment variable and is displayed when the admin logs in.</p>
 
 <p>The first to look at is how the secrets are generated, they use python’s random and it doesn’t seem to be realistic (CTFs momento), we all know that the default random number generators in programming languages are predictable and Python is no exception. From Python <a href="https://docs.python.org/3/library/random.html">docs</a>:</p>
@@ -488,10 +492,11 @@ Can you help us revels the attacker message ?</p>
 
 <h2 id="white">White</h2>
 
-<h6 id="challenge-description-1">Challenge Description</h6>
+<h3 id="challenge-description-1">Challenge Description</h3>
+
 <p>Our intel team has found a web page which looks innocuous, but seems to be hiding secrets locally…</p>
 
-<h6 id="solution-1">Solution</h6>
+<h3 id="solution-1">Solution</h3>
 
 <p>There is a simple LFI when we click on one of the posts button,</p>
 
@@ -513,11 +518,11 @@ Can you help us revels the attacker message ?</p>
 
 <h2 id="scamming-factory-12">Scamming Factory (1/2)</h2>
 
-<h6 id="challenge-description-2">Challenge Description</h6>
+<h3 id="challenge-description-2">Challenge Description</h3>
 
 <p>I was looking for machines for my new factory and I came across this website. It seems weird and it has a lot of ads popping up. Can you take a look at it for me?</p>
 
-<h6 id="solution-2">Solution</h6>
+<h3 id="solution-2">Solution</h3>
 
 <p>The challenge website has a weird theme where it pops-up fake scare-wares whenever you click on something, there didn’t seem to be any visible backend functionalities from the buttons/code provided, the page’s sources didn’t have anything interesting but simple items listing with no functionalities, except a small obfuscated JS code that wasn’t clear what it was doing</p>
 
@@ -537,13 +542,13 @@ After debugging the code a bit, I found an array of strings that contains this p
 
 <h2 id="cham">Cham</h2>
 
-<h6 id="challenge-description-3">Challenge Description</h6>
+<h3 id="challenge-description-3">Challenge Description</h3>
 
 <p>Are u rich?</p>
 
 <p><strong>Hint:</strong> <em>regex + timeout = $$</em></p>
 
-<h6 id="solution-3">Solution</h6>
+<h3 id="solution-3">Solution</h3>
 
 <p>The application is a simple shop with items listed including the flag item which costs 1337, we have 0 balance but we can get 100 balance if we use the given voucher that each users gets and is allowed to use it or any other free voucher only once.</p>
 

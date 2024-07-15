@@ -60,6 +60,8 @@
 
 
 
+  <meta name="naver-site-verification" content="naver-site-verification">
+
 
 <!-- end _includes/seo.html -->
 
@@ -70,7 +72,7 @@
 
 <script type="text/javascript">
   document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
-  
+  window.enable_copy_code_button = true;
 </script>
 
 <!-- For all browsers -->
@@ -103,6 +105,8 @@
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/logo.png" alt="0xOZ"></a>
         
         <a class="site-title" href="/">
           0xOZ
@@ -141,6 +145,8 @@
 
     <div class="initial-content">
       
+
+
 
 
   
@@ -311,146 +317,89 @@
 
 
 
-  <div class="archive">
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="NCSC Training 2024 Writeups">
+    <meta itemprop="description" content="Those are writeups for the challenges of the NCSC Training 2024 CTF, the CTF was held on 11th July 2024 to 13th July 2024.">
+    <meta itemprop="datePublished" content="2024-07-13T00:00:00+03:00">
     
-      <h1 id="page-title" class="page__title">NCSC Training 2024 Writeups</h1>
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="https://0x0oz.github.io/writeups/ncsc-training-2024" itemprop="url">NCSC Training 2024 Writeups
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
     
-    <ul id="toc" class="section-nav">
-<li class="toc-entry toc-h2"><a href="#web">Web</a>
-<ul>
-<li class="toc-entry toc-h3"><a href="#robot">Robot</a>
-<ul>
-<li class="toc-entry toc-h6"><a href="#challenge-description">Challenge Description</a></li>
-<li class="toc-entry toc-h6"><a href="#solution">Solution</a></li>
-</ul>
-</li>
-<li class="toc-entry toc-h3"><a href="#privilege">Privilege</a>
-<ul>
-<li class="toc-entry toc-h6"><a href="#challenge-description-1">Challenge Description</a></li>
-<li class="toc-entry toc-h6"><a href="#solution-1">Solution</a></li>
-</ul>
-</li>
-<li class="toc-entry toc-h3"><a href="#injectxec">InjectXec</a>
-<ul>
-<li class="toc-entry toc-h6"><a href="#challenge-description-2">Challenge description</a></li>
-<li class="toc-entry toc-h6"><a href="#solution-2">Solution</a></li>
-</ul>
-</li>
-<li class="toc-entry toc-h3"><a href="#file-hunt">File Hunt</a>
-<ul>
-<li class="toc-entry toc-h6"><a href="#challenge-description-3">Challenge Description</a></li>
-<li class="toc-entry toc-h6"><a href="#solution-3">Solution</a></li>
-</ul>
-</li>
-<li class="toc-entry toc-h3"><a href="#method">Method</a>
-<ul>
-<li class="toc-entry toc-h6"><a href="#challenge-description-4">Challenge Description</a></li>
-<li class="toc-entry toc-h6"><a href="#solution-4">Solution</a></li>
-</ul>
-</li>
-<li class="toc-entry toc-h3"><a href="#backdoor">Backdoor</a>
-<ul>
-<li class="toc-entry toc-h6"><a href="#challenge-description-5">Challenge Description</a></li>
-<li class="toc-entry toc-h6"><a href="#solution-5">Solution</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-entry toc-h2"><a href="#digital-forensics">Digital Forensics</a>
-<ul>
-<li class="toc-entry toc-h3"><a href="#activity">Activity</a>
-<ul>
-<li class="toc-entry toc-h6"><a href="#challenge-description-6">Challenge Description</a></li>
-<li class="toc-entry toc-h6"><a href="#solution-6">Solution</a></li>
-</ul>
-</li>
-<li class="toc-entry toc-h3"><a href="#traffic">Traffic</a>
-<ul>
-<li class="toc-entry toc-h6"><a href="#challenge-description-7">Challenge Description</a></li>
-<li class="toc-entry toc-h6"><a href="#solution-7">Solution</a></li>
-</ul>
-</li>
-<li class="toc-entry toc-h3"><a href="#recover">Recover</a>
-<ul>
-<li class="toc-entry toc-h6"><a href="#challenge-description-8">Challenge Description</a></li>
-<li class="toc-entry toc-h6"><a href="#solution-8">Solution</a></li>
-</ul>
-</li>
-<li class="toc-entry toc-h3"><a href="#meta">Meta</a>
-<ul>
-<li class="toc-entry toc-h6"><a href="#challenge-description-9">Challenge Description</a></li>
-<li class="toc-entry toc-h6"><a href="#solution-9">Solution</a></li>
-</ul>
-</li>
-<li class="toc-entry toc-h3"><a href="#fix">FIX</a>
-<ul>
-<li class="toc-entry toc-h6"><a href="#challenge-description-10">Challenge Description</a></li>
-<li class="toc-entry toc-h6"><a href="#solution-10">Solution</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-entry toc-h2"><a href="#cryptography">Cryptography</a>
-<ul>
-<li class="toc-entry toc-h3"><a href="#vigenvault">VigenVault</a>
-<ul>
-<li class="toc-entry toc-h6"><a href="#challenge-description-11">Challenge Description</a></li>
-<li class="toc-entry toc-h6"><a href="#solution-11">Solution</a></li>
-</ul>
-</li>
-<li class="toc-entry toc-h3"><a href="#simple-math">Simple Math</a>
-<ul>
-<li class="toc-entry toc-h6"><a href="#challenge-description-12">Challenge Description</a></li>
-<li class="toc-entry toc-h6"><a href="#solution-12">Solution</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul><p>Those are writeups for the challenges of the NCSC Training 2024 CTF, the CTF was held on 11th July 2024 to 13th July 2024.</p>
 
-<h2 id="web">
-<a class="anchor" href="#web" aria-hidden="true"><span class="octicon octicon-link"></span></a>Web</h2>
+    
 
-<h3 id="robot">
-<a class="anchor" href="#robot" aria-hidden="true"><span class="octicon octicon-link"></span></a>Robot</h3>
+    
+      
+      
 
-<h6 id="challenge-description">
-<a class="anchor" href="#challenge-description" aria-hidden="true"><span class="octicon octicon-link"></span></a>Challenge Description</h6>
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          8 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> Table of Contents</h4></header>
+              <ul class="toc__menu"><li><a href="#writeups">Writeups</a><ul><li><a href="#web">Web</a><ul><li><a href="#robot">Robot</a><ul><li><a href="#challenge-description">Challenge Description</a></li><li><a href="#solution">Solution</a></li></ul></li><li><a href="#privilege">Privilege</a><ul><li><a href="#challenge-description-1">Challenge Description</a></li><li><a href="#solution-1">Solution</a></li></ul></li><li><a href="#injectxec">InjectXec</a><ul><li><a href="#challenge-description-2">Challenge description</a></li><li><a href="#solution-2">Solution</a></li></ul></li><li><a href="#file-hunt">File Hunt</a><ul><li><a href="#challenge-description-3">Challenge Description</a></li><li><a href="#solution-3">Solution</a></li></ul></li><li><a href="#method">Method</a><ul><li><a href="#challenge-description-4">Challenge Description</a></li><li><a href="#solution-4">Solution</a></li></ul></li><li><a href="#backdoor">Backdoor</a><ul><li><a href="#challenge-description-5">Challenge Description</a></li><li><a href="#solution-5">Solution</a></li></ul></li></ul></li><li><a href="#digital-forensics">Digital Forensics</a><ul><li><a href="#activity">Activity</a><ul><li><a href="#challenge-description-6">Challenge Description</a></li><li><a href="#solution-6">Solution</a></li></ul></li><li><a href="#traffic">Traffic</a><ul><li><a href="#challenge-description-7">Challenge Description</a></li><li><a href="#solution-7">Solution</a></li></ul></li><li><a href="#recover">Recover</a><ul><li><a href="#challenge-description-8">Challenge Description</a></li><li><a href="#solution-8">Solution</a></li></ul></li><li><a href="#meta">Meta</a><ul><li><a href="#challenge-description-9">Challenge Description</a></li><li><a href="#solution-9">Solution</a></li></ul></li><li><a href="#fix">FIX</a><ul><li><a href="#challenge-description-10">Challenge Description</a></li><li><a href="#solution-10">Solution</a></li></ul></li></ul></li><li><a href="#cryptography">Cryptography</a><ul><li><a href="#vigenvault">VigenVault</a><ul><li><a href="#challenge-description-11">Challenge Description</a></li><li><a href="#solution-11">Solution</a></li></ul></li><li><a href="#simple-math">Simple Math</a><ul><li><a href="#challenge-description-12">Challenge Description</a></li><li><a href="#solution-12">Solution</a></li></ul></li></ul></li></ul></li></ul>
+            </nav>
+          </aside>
+        
+        <p>Those are writeups for the challenges of the NCSC Training 2024 CTF, the CTF was held on 11th July 2024 to 13th July 2024.</p>
+
+<h1 id="writeups">Writeups</h1>
+
+<h2 id="web">Web</h2>
+
+<h3 id="robot">Robot</h3>
+
+<h4 id="challenge-description">Challenge Description</h4>
 
 <p>A Web crawler, sometimes called a robot, is an Internet bot that systematically browses the World Wide Web and that is typically operated by search engines for the purpose of Web indexing.</p>
 
-<h6 id="solution">
-<a class="anchor" href="#solution" aria-hidden="true"><span class="octicon octicon-link"></span></a>Solution</h6>
+<h4 id="solution">Solution</h4>
 
 <p>The challenge is a simple <code class="language-plaintext highlighter-rouge">robots.txt</code> as the name says, we can see <code class="language-plaintext highlighter-rouge">Disallow: /always_read_robots.txt</code> in the <code class="language-plaintext highlighter-rouge">robots.txt</code> file. So, we can access the <code class="language-plaintext highlighter-rouge">always_read_robots.txt</code> file and get the flag.</p>
 
-<p><img src="/assets/images/ncsc-training-writeups/ncsc-training-2024-robot.png" alt="ncsc-training-robot"></p>
+<p><img src="/assets/images/ncsc-training-writeups/ncsc-training-2024-robot.png" alt="ncsc-training-robot" /></p>
 
-<h3 id="privilege">
-<a class="anchor" href="#privilege" aria-hidden="true"><span class="octicon octicon-link"></span></a>Privilege</h3>
+<h3 id="privilege">Privilege</h3>
 
-<h6 id="challenge-description-1">
-<a class="anchor" href="#challenge-description-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Challenge Description</h6>
+<h4 id="challenge-description-1">Challenge Description</h4>
 
 <p>Cookies are a widely used way to enable authentication in many of the applications out there.</p>
 
-<h6 id="solution-1">
-<a class="anchor" href="#solution-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Solution</h6>
+<h4 id="solution-1">Solution</h4>
 
 <p>The challenge is a simple cookie manipulation challenge. We can see the cookie <code class="language-plaintext highlighter-rouge">admin=false</code> in the browser. We can change the value of the cookie to <code class="language-plaintext highlighter-rouge">true</code> and get the flag.</p>
 
-<p><img src="/assets/images/ncsc-training-writeups/ncsc-training-2024-privilege.png" alt="ncsc-training-privilege"></p>
+<p><img src="/assets/images/ncsc-training-writeups/ncsc-training-2024-privilege.png" alt="ncsc-training-privilege" /></p>
 
-<h3 id="injectxec">
-<a class="anchor" href="#injectxec" aria-hidden="true"><span class="octicon octicon-link"></span></a>InjectXec</h3>
+<h3 id="injectxec">InjectXec</h3>
 
-<h6 id="challenge-description-2">
-<a class="anchor" href="#challenge-description-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Challenge description</h6>
+<h4 id="challenge-description-2">Challenge description</h4>
 
 <p>&lt; No Description Provided &gt;</p>
 
-<h6 id="solution-2">
-<a class="anchor" href="#solution-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Solution</h6>
+<h4 id="solution-2">Solution</h4>
 
 <p>It was a simple command injection, we can escape the <code class="language-plaintext highlighter-rouge">figlet</code> command context to pass any system commands using a semi-colon <code class="language-plaintext highlighter-rouge">;</code>. The source code  looked like this when I extracted it:</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
@@ -487,33 +436,27 @@
 <span class="nt">&lt;/html&gt;</span>
 </code></pre></div></div>
 
-<p><img src="/assets/images/ncsc-training-writeups/ncsc-training-2024-injectxec.png" alt="ncsc-training-injectxec"></p>
+<p><img src="/assets/images/ncsc-training-writeups/ncsc-training-2024-injectxec.png" alt="ncsc-training-injectxec" /></p>
 
-<h3 id="file-hunt">
-<a class="anchor" href="#file-hunt" aria-hidden="true"><span class="octicon octicon-link"></span></a>File Hunt</h3>
+<h3 id="file-hunt">File Hunt</h3>
 
-<h6 id="challenge-description-3">
-<a class="anchor" href="#challenge-description-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Challenge Description</h6>
+<h4 id="challenge-description-3">Challenge Description</h4>
 
 <p>Read the <code class="language-plaintext highlighter-rouge">flag.txt</code> in <code class="language-plaintext highlighter-rouge">home</code> directory of unknown user</p>
 
-<h6 id="solution-3">
-<a class="anchor" href="#solution-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Solution</h6>
+<h4 id="solution-3">Solution</h4>
 
 <p>The challenge is a basic LFI, we will see some links that op and some other pages which is vulnerable to LFI, we can read the current users by accessing the <code class="language-plaintext highlighter-rouge">etc/passwd</code> file and then read the <code class="language-plaintext highlighter-rouge">flag.txt</code> file in the <code class="language-plaintext highlighter-rouge">home</code> directory of <code class="language-plaintext highlighter-rouge">john</code> user that we will find there.</p>
 
-<p><img src="/assets/images/ncsc-training-writeups/ncsc-training-2024-filehunt.png" alt="ncsc-training-filehunt"></p>
+<p><img src="/assets/images/ncsc-training-writeups/ncsc-training-2024-filehunt.png" alt="ncsc-training-filehunt" /></p>
 
-<h3 id="method">
-<a class="anchor" href="#method" aria-hidden="true"><span class="octicon octicon-link"></span></a>Method</h3>
+<h3 id="method">Method</h3>
 
-<h6 id="challenge-description-4">
-<a class="anchor" href="#challenge-description-4" aria-hidden="true"><span class="octicon octicon-link"></span></a>Challenge Description</h6>
+<h4 id="challenge-description-4">Challenge Description</h4>
 
 <p>HTTP defines a set of request methods to indicate the desired action to be performed for a given resource.</p>
 
-<h6 id="solution-4">
-<a class="anchor" href="#solution-4" aria-hidden="true"><span class="octicon octicon-link"></span></a>Solution</h6>
+<h4 id="solution-4">Solution</h4>
 
 <p>The index pages open with an empty page that only has “Nothing Here” text, nothing in interesting in the page source too. So, I tried to access the <code class="language-plaintext highlighter-rouge">robots.txt</code> file and found the <code class="language-plaintext highlighter-rouge">Disallow: /index.php.bak</code>. Inside <code class="language-plaintext highlighter-rouge">index.php.bak</code> we found the following code:</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span> 
@@ -526,7 +469,7 @@
 </code></pre></div></div>
 <p>We can see the input is compared to the base64 of the string <code class="language-plaintext highlighter-rouge">flag</code>, so we can encode the string <code class="language-plaintext highlighter-rouge">flag</code> to base64 and pass it as the input to the index page and we will get the following results:</p>
 
-<p><img src="/assets/images/ncsc-training-writeups/ncsc-training-2024-method-01.png" alt="ncsc-training-method-01"></p>
+<p><img src="/assets/images/ncsc-training-writeups/ncsc-training-2024-method-01.png" alt="ncsc-training-method-01" /></p>
 
 <p>We got a new for what’s inside the code to work with next</p>
 
@@ -538,51 +481,48 @@
 
 <p>We need to send a post request with the GG parameter being equal to flag text, If we try to modify the request manually (GET=&gt;POST) and add the body it will not work because we need to include add the <code class="language-plaintext highlighter-rouge">Content-Type: application/x-www-form-urlencoded</code> header too or we can use the terminal for that.</p>
 
-<p><img src="/assets/images/ncsc-training-writeups/ncsc-training-2024-method-02.png" alt="ncsc-training-method-02"></p>
+<p><img src="/assets/images/ncsc-training-writeups/ncsc-training-2024-method-02.png" alt="ncsc-training-method-02" /></p>
 
-<p><img src="/assets/images/ncsc-training-writeups/ncsc-training-2024-method-03.png" alt="ncsc-training-method-03"></p>
+<p><img src="/assets/images/ncsc-training-writeups/ncsc-training-2024-method-03.png" alt="ncsc-training-method-03" /></p>
 
-<h3 id="backdoor">
-<a class="anchor" href="#backdoor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Backdoor</h3>
+<h3 id="backdoor">Backdoor</h3>
 
-<h6 id="challenge-description-5">
-<a class="anchor" href="#challenge-description-5" aria-hidden="true"><span class="octicon octicon-link"></span></a>Challenge Description</h6>
+<h4 id="challenge-description-5">Challenge Description</h4>
 
 <p>&lt; No Description Provided &gt;</p>
 
-<h6 id="solution-5">
-<a class="anchor" href="#solution-5" aria-hidden="true"><span class="octicon octicon-link"></span></a>Solution</h6>
+<h4 id="solution-5">Solution</h4>
 
 <p>This challenge was more fun than any other of the basic challenges in the CTF, the website index pages have a simple heading that says <strong><em>*Welcome Bro, What is your name?*</em></strong>, and nothing else around, not in the source and the robots or anywhere. So, I tried to look for any hidden files/directories and didn’t find anything, then I tried to fuzz any possible parameters in the index page, which also found nothing from the quick search.</p>
 
 <p>I reread the page content and noticed the word <strong><em>*name*</em></strong> in the text, so I tried to pass the name parameter in the URL and got a reflected text when using it.</p>
 
-<p><img src="/assets/images/ncsc-training-writeups/ncsc-training-2024-backdoor-01.png" alt="ncsc-training-backdoor-01"></p>
+<p><img src="/assets/images/ncsc-training-writeups/ncsc-training-2024-backdoor-01.png" alt="ncsc-training-backdoor-01" /></p>
 
 <p>We still don’t have a clue about the nature of this input, I started fuzzing using burp intruder and random payloads, I also started throwing random characters and payloads till I saw the TryHarder response</p>
 
-<p><img src="/assets/images/ncsc-training-writeups/ncsc-training-2024-backdoor-02.png" alt="ncsc-training-backdoor-02"></p>
+<p><img src="/assets/images/ncsc-training-writeups/ncsc-training-2024-backdoor-02.png" alt="ncsc-training-backdoor-02" /></p>
 
 <p>I started removing characters from the payload until I got a new response</p>
 
-<p><img src="/assets/images/ncsc-training-writeups/ncsc-training-2024-backdoor-03.png" alt="ncsc-training-backdoor-03"></p>
+<p><img src="/assets/images/ncsc-training-writeups/ncsc-training-2024-backdoor-03.png" alt="ncsc-training-backdoor-03" /></p>
 
 <p>It seems that <code class="language-plaintext highlighter-rouge">&lt;</code> and many other characters and strings are prohibited. Anyway, from this error message, we now know that we are dealing with eval function and if we try to use any PHP builtin variable it will be interpreted so I started looking for a way to figure out how to execute system commands which also found the strings system, exec, passthru, and many others are blocked.</p>
 
 <p>Without running a system command yet, we can call the <code class="language-plaintext highlighter-rouge">phpinfo()</code> using <code class="language-plaintext highlighter-rouge">?name=";phpinfo();//</code></p>
 
-<p><img src="/assets/images/ncsc-training-writeups/ncsc-training-2024-backdoor-04.png" alt="ncsc-training-backdoor-04"></p>
+<p><img src="/assets/images/ncsc-training-writeups/ncsc-training-2024-backdoor-04.png" alt="ncsc-training-backdoor-04" /></p>
 
 <p>Now we can use some php tricks to call system without typing system with <code class="language-plaintext highlighter-rouge">";$v="syste"."m";$v("ls");//</code></p>
 
-<p><img src="/assets/images/ncsc-training-writeups/ncsc-training-2024-backdoor-05.png" alt="ncsc-training-backdoor-05"></p>
+<p><img src="/assets/images/ncsc-training-writeups/ncsc-training-2024-backdoor-05.png" alt="ncsc-training-backdoor-05" /></p>
 
 <p>We found the flag file<code class="language-plaintext highlighter-rouge">never_find_flag.txt</code>, we can go and read it from there- But that’s not interesting at all, I want to dive more and cat it using the command injection.
 If we try to read the file with <code class="language-plaintext highlighter-rouge">";$v="syste"."m";$v("cat never_find_flag.txt");//</code> we will get <code class="language-plaintext highlighter-rouge">The name is too long</code> response and if we somehow shrink the length for example using <code class="language-plaintext highlighter-rouge">cat *txt</code> we are going to get <code class="language-plaintext highlighter-rouge">Try Harder</code> because <code class="language-plaintext highlighter-rouge">cat</code> is blocked.</p>
 
 <p>We need to get rid of these restrictions, after looking into PHP builtin variables I thought of using different request parameters, <code class="language-plaintext highlighter-rouge">$_GET</code> and <code class="language-plaintext highlighter-rouge">$_POST</code> are blocked, I tried <code class="language-plaintext highlighter-rouge">$_REQUEST</code> and it worked, and using this payload we kind of got unintended bling bling 🙂 <code class="language-plaintext highlighter-rouge">";$_REQUEST[1]($_REQUEST[2]);//&amp;1=system&amp;2=ls; cat never_find_flag.txt ; id</code></p>
 
-<p><img src="/assets/images/ncsc-training-writeups/ncsc-training-2024-backdoor-06.png" alt="ncsc-training-backdoor-06"></p>
+<p><img src="/assets/images/ncsc-training-writeups/ncsc-training-2024-backdoor-06.png" alt="ncsc-training-backdoor-06" /></p>
 
 <p>I also checked the challenge source code, and the <code class="language-plaintext highlighter-rouge">$_REQUEST</code> was unintended because <code class="language-plaintext highlighter-rouge">Request</code> was one of the blocked keywords, though the used function to check was case-sensitive which allowed me to have this unintended solution.</p>
 
@@ -633,20 +573,16 @@ If we try to read the file with <code class="language-plaintext highlighter-roug
 <p>So I was so lucky to get the unintended solution through <code class="language-plaintext highlighter-rouge">$_REQUEST</code> because the list had <code class="language-plaintext highlighter-rouge">Request</code> and the stripos is case-sensetive.
 But it here is another funny thing, we can do the same command injection technique using <code class="language-plaintext highlighter-rouge">$_COOKIE</code> instead of <code class="language-plaintext highlighter-rouge">$_REQUEST</code> and it will work</p>
 
-<h2 id="digital-forensics">
-<a class="anchor" href="#digital-forensics" aria-hidden="true"><span class="octicon octicon-link"></span></a>Digital Forensics</h2>
+<h2 id="digital-forensics">Digital Forensics</h2>
 
-<h3 id="activity">
-<a class="anchor" href="#activity" aria-hidden="true"><span class="octicon octicon-link"></span></a>Activity</h3>
+<h3 id="activity">Activity</h3>
 
-<h6 id="challenge-description-6">
-<a class="anchor" href="#challenge-description-6" aria-hidden="true"><span class="octicon octicon-link"></span></a>Challenge Description</h6>
+<h4 id="challenge-description-6">Challenge Description</h4>
 
 <p>Our DFIR team has detected potinal of SQL injection attack
 Can you help us revels the attacker message ?</p>
 
-<h6 id="solution-6">
-<a class="anchor" href="#solution-6" aria-hidden="true"><span class="octicon octicon-link"></span></a>Solution</h6>
+<h4 id="solution-6">Solution</h4>
 
 <p>The flag is the decode characters of the SQLi payload that is in the log file given</p>
 
@@ -654,61 +590,49 @@ Can you help us revels the attacker message ?</p>
 <span class="k">for </span>i <span class="k">in</span> <span class="sb">`</span><span class="nb">echo</span> <span class="nv">$chars</span><span class="sb">`</span><span class="p">;</span> <span class="k">do </span><span class="nb">printf</span> <span class="s1">'%b'</span> <span class="s2">"</span><span class="se">\x</span><span class="sb">`</span><span class="nb">printf</span> <span class="s1">'%x'</span> <span class="nv">$i</span><span class="sb">`</span><span class="s2">"</span><span class="p">;</span> <span class="k">done</span>
 </code></pre></div></div>
 
-<p><img src="/assets/images/ncsc-training-writeups/ncsc-training-2024-activity.png" alt="ncsc-training-activity"></p>
+<p><img src="/assets/images/ncsc-training-writeups/ncsc-training-2024-activity.png" alt="ncsc-training-activity" /></p>
 
-<h3 id="traffic">
-<a class="anchor" href="#traffic" aria-hidden="true"><span class="octicon octicon-link"></span></a>Traffic</h3>
+<h3 id="traffic">Traffic</h3>
 
-<h6 id="challenge-description-7">
-<a class="anchor" href="#challenge-description-7" aria-hidden="true"><span class="octicon octicon-link"></span></a>Challenge Description</h6>
+<h4 id="challenge-description-7">Challenge Description</h4>
 
 <p>Network traffic or data traffic is the amount of data moving across a network at a given point of time.</p>
 
-<h6 id="solution-7">
-<a class="anchor" href="#solution-7" aria-hidden="true"><span class="octicon octicon-link"></span></a>Solution</h6>
+<h4 id="solution-7">Solution</h4>
 
 <p>The challenge is a simple PCAP analysis, we can see the flag base64 encoded in one of the HTTP requests.</p>
 
-<p><img src="/assets/images/ncsc-training-writeups/ncsc-training-2024-traffic.png" alt="ncsc-training-traffic"></p>
+<p><img src="/assets/images/ncsc-training-writeups/ncsc-training-2024-traffic.png" alt="ncsc-training-traffic" /></p>
 
-<h3 id="recover">
-<a class="anchor" href="#recover" aria-hidden="true"><span class="octicon octicon-link"></span></a>Recover</h3>
-<h6 id="challenge-description-8">
-<a class="anchor" href="#challenge-description-8" aria-hidden="true"><span class="octicon octicon-link"></span></a>Challenge Description</h6>
+<h3 id="recover">Recover</h3>
+<h4 id="challenge-description-8">Challenge Description</h4>
 <p>File carving is a great method for recovering files and fragments of files when directory entries are corrupt or missing</p>
 
-<h6 id="solution-8">
-<a class="anchor" href="#solution-8" aria-hidden="true"><span class="octicon octicon-link"></span></a>Solution</h6>
+<h4 id="solution-8">Solution</h4>
 
 <p>The challenge is a simple file carving challenge, we can use <code class="language-plaintext highlighter-rouge">foremost</code> to carve the flag from the given image.</p>
 
-<p><img src="/assets/images/ncsc-training-writeups/ncsc-training-2024-recover.png" alt="ncsc-training-recover"></p>
+<p><img src="/assets/images/ncsc-training-writeups/ncsc-training-2024-recover.png" alt="ncsc-training-recover" /></p>
 
-<h3 id="meta">
-<a class="anchor" href="#meta" aria-hidden="true"><span class="octicon octicon-link"></span></a>Meta</h3>
-<h6 id="challenge-description-9">
-<a class="anchor" href="#challenge-description-9" aria-hidden="true"><span class="octicon octicon-link"></span></a>Challenge Description</h6>
+<h3 id="meta">Meta</h3>
+<h4 id="challenge-description-9">Challenge Description</h4>
 <p>Find the `Creator of the image to get the flag 🙂</p>
 
-<h6 id="solution-9">
-<a class="anchor" href="#solution-9" aria-hidden="true"><span class="octicon octicon-link"></span></a>Solution</h6>
+<h4 id="solution-9">Solution</h4>
 
 <p>The challenge is a simple metadata analysis challenge, we can use <code class="language-plaintext highlighter-rouge">exiftool</code> to get the metadata of the image and get the flag.</p>
 
-<p><img src="/assets/images/ncsc-training-writeups/ncsc-training-2024-meta.png" alt="ncsc-training-meta"></p>
+<p><img src="/assets/images/ncsc-training-writeups/ncsc-training-2024-meta.png" alt="ncsc-training-meta" /></p>
 
-<h3 id="fix">
-<a class="anchor" href="#fix" aria-hidden="true"><span class="octicon octicon-link"></span></a>FIX</h3>
-<h6 id="challenge-description-10">
-<a class="anchor" href="#challenge-description-10" aria-hidden="true"><span class="octicon octicon-link"></span></a>Challenge Description</h6>
+<h3 id="fix">FIX</h3>
+<h4 id="challenge-description-10">Challenge Description</h4>
 <p>I believe you can repair the damage to the image.</p>
 
-<h6 id="solution-10">
-<a class="anchor" href="#solution-10" aria-hidden="true"><span class="octicon octicon-link"></span></a>Solution</h6>
+<h4 id="solution-10">Solution</h4>
 
 <p>This challenge has a corrupted image, if we look at the hexdump of the file we will find a pattern of number <code class="language-plaintext highlighter-rouge">7</code> being repeated every one character in the file data, we can remove the <code class="language-plaintext highlighter-rouge">7</code> characters from the file and we will get a valid image file.</p>
 
-<p><img src="/assets/images/ncsc-training-writeups/ncsc-training-2024-fix-01.png" alt="ncsc-training-fix-01"></p>
+<p><img src="/assets/images/ncsc-training-writeups/ncsc-training-2024-fix-01.png" alt="ncsc-training-fix-01" /></p>
 
 <p>I asked ChatGPT to generate the following script which fixes the image by removing any byte at odd positions in the file.</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">process_bytes</span><span class="p">(</span><span class="n">input_file</span><span class="p">,</span> <span class="n">output_file</span><span class="p">):</span>
@@ -729,35 +653,28 @@ Can you help us revels the attacker message ?</p>
 </span><span class="nf">process_bytes</span><span class="p">(</span><span class="n">input_file</span><span class="p">,</span> <span class="n">output_file</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p><img src="/assets/images/ncsc-training-writeups/ncsc-training-2024-fix-02.png" alt="ncsc-training-fix-02"></p>
+<p><img src="/assets/images/ncsc-training-writeups/ncsc-training-2024-fix-02.png" alt="ncsc-training-fix-02" /></p>
 
-<h2 id="cryptography">
-<a class="anchor" href="#cryptography" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cryptography</h2>
+<h2 id="cryptography">Cryptography</h2>
 
-<h3 id="vigenvault">
-<a class="anchor" href="#vigenvault" aria-hidden="true"><span class="octicon octicon-link"></span></a>VigenVault</h3>
-<h6 id="challenge-description-11">
-<a class="anchor" href="#challenge-description-11" aria-hidden="true"><span class="octicon octicon-link"></span></a>Challenge Description</h6>
+<h3 id="vigenvault">VigenVault</h3>
+<h4 id="challenge-description-11">Challenge Description</h4>
 <p>Uncover the final message that reveals the secret of the VigenVault.</p>
 
 <p>The cipher is XGQM{Zgqilovc_Mmnrip_dcno_sd_cckwirbma_orabcndmmx_:t}</p>
 
-<h6 id="solution-11">
-<a class="anchor" href="#solution-11" aria-hidden="true"><span class="octicon octicon-link"></span></a>Solution</h6>
+<h4 id="solution-11">Solution</h4>
 
 <p>The challenge is a simple Vigenere cipher, we can use an online <a href="https://www.dcode.fr/vigenere-cipher">tool</a> to decrypt the message and get the flag.</p>
 
-<p><img src="/assets/images/ncsc-training-writeups/ncsc-training-2024-vigenvault.png" alt="ncsc-training-vigenvault"></p>
+<p><img src="/assets/images/ncsc-training-writeups/ncsc-training-2024-vigenvault.png" alt="ncsc-training-vigenvault" /></p>
 
-<h3 id="simple-math">
-<a class="anchor" href="#simple-math" aria-hidden="true"><span class="octicon octicon-link"></span></a>Simple Math</h3>
+<h3 id="simple-math">Simple Math</h3>
 
-<h6 id="challenge-description-12">
-<a class="anchor" href="#challenge-description-12" aria-hidden="true"><span class="octicon octicon-link"></span></a>Challenge Description</h6>
+<h4 id="challenge-description-12">Challenge Description</h4>
 <p>Solve this cipher by sharpening your Python coding skills. Build the right script, and unlock the secrets within.</p>
 
-<h6 id="solution-12">
-<a class="anchor" href="#solution-12" aria-hidden="true"><span class="octicon octicon-link"></span></a>Solution</h6>
+<h4 id="solution-12">Solution</h4>
 
 <p>We got a script that does some math operations on message to generate cipher text, interestingly the script also has the reverse of those operations (decipher) so we just need to run the file to get the flag:</p>
 <div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">Crypto.Util.number</span> <span class="kn">import</span> <span class="o">*</span>
@@ -881,7 +798,139 @@ Can you help us revels the attacker message ?</p>
   </section>
 
 
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#ctf" class="page__taxonomy-item p-category" rel="tag">ctf</a><span class="sep">, </span>
+    
+      <a href="/tags/#ncsc-training-2024" class="page__taxonomy-item p-category" rel="tag">ncsc-training-2024</a><span class="sep">, </span>
+    
+      <a href="/tags/#writeups" class="page__taxonomy-item p-category" rel="tag">writeups</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#ctf" class="page__taxonomy-item p-category" rel="tag">CTF</a><span class="sep">, </span>
+    
+      <a href="/categories/#writeups" class="page__taxonomy-item p-category" rel="tag">Writeups</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2024-07-13T00:00:00+03:00">July 13, 2024</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=NCSC+Training+2024+Writeups%20https%3A%2F%2F0x0oz.github.io%2Fwriteups%2Fncsc-training-2024" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F0x0oz.github.io%2Fwriteups%2Fncsc-training-2024" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://0x0oz.github.io/writeups/ncsc-training-2024" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/writeups/metactf-v5-2024" class="pagination--pager" title="MetaCTF v5 2024 Writeups
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    
+<div class="page__related">
+  
+  <h2 class="page__related-title">You may also enjoy</h2>
+  <div class="grid__wrapper">
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/writeups/metactf-v5-2024" rel="permalink">MetaCTF v5 2024 Writeups
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          9 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Writeups for the MetaCTF v5 2024 CTF Web Challenges that was held on 30th June 2024.
+</p>
+  </article>
+</div>
+
+    
   </div>
+</div>
+
+  
+  
 </div>
 
       

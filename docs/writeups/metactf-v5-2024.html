@@ -60,6 +60,8 @@
 
 
 
+  <meta name="naver-site-verification" content="naver-site-verification">
+
 
 <!-- end _includes/seo.html -->
 
@@ -70,7 +72,7 @@
 
 <script type="text/javascript">
   document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
-  
+  window.enable_copy_code_button = true;
 </script>
 
 <!-- For all browsers -->
@@ -103,6 +105,8 @@
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/logo.png" alt="0xOZ"></a>
         
         <a class="site-title" href="/">
           0xOZ
@@ -141,6 +145,8 @@
 
     <div class="initial-content">
       
+
+
 
 
   
@@ -311,46 +317,62 @@
 
 
 
-  <div class="archive">
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="MetaCTF v5 2024 Writeups">
+    <meta itemprop="description" content="Writeups for the MetaCTF v5 2024 CTF Web Challenges that was held on 30th June 2024.">
+    <meta itemprop="datePublished" content="2024-07-10T00:00:00+03:00">
     
-      <h1 id="page-title" class="page__title">MetaCTF v5 2024 Writeups</h1>
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="https://0x0oz.github.io/writeups/metactf-v5-2024" itemprop="url">MetaCTF v5 2024 Writeups
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
     
-    <ul id="toc" class="section-nav">
-<li class="toc-entry toc-h2"><a href="#pythons-twister">Python’s Twister</a>
-<ul>
-<li class="toc-entry toc-h6"><a href="#challenge-description">Challenge Description</a></li>
-<li class="toc-entry toc-h6"><a href="#solution">Solution</a></li>
-</ul>
-</li>
-<li class="toc-entry toc-h2"><a href="#white">White</a>
-<ul>
-<li class="toc-entry toc-h6"><a href="#challenge-description-1">Challenge Description</a></li>
-<li class="toc-entry toc-h6"><a href="#solution-1">Solution</a></li>
-</ul>
-</li>
-<li class="toc-entry toc-h2"><a href="#scamming-factory-12">Scamming Factory (1/2)</a>
-<ul>
-<li class="toc-entry toc-h6"><a href="#challenge-description-2">Challenge Description</a></li>
-<li class="toc-entry toc-h6"><a href="#solution-2">Solution</a></li>
-</ul>
-</li>
-<li class="toc-entry toc-h2"><a href="#cham">Cham</a>
-<ul>
-<li class="toc-entry toc-h6"><a href="#challenge-description-3">Challenge Description</a></li>
-<li class="toc-entry toc-h6"><a href="#solution-3">Solution</a></li>
-</ul>
-</li>
-</ul><p>Writeups for the MetaCTF v5 2024 CTF Web Challenges that was held on 30th June 2024.</p>
 
-<h2 id="pythons-twister">
-<a class="anchor" href="#pythons-twister" aria-hidden="true"><span class="octicon octicon-link"></span></a>Python’s Twister</h2>
+    
 
-<h6 id="challenge-description">
-<a class="anchor" href="#challenge-description" aria-hidden="true"><span class="octicon octicon-link"></span></a>Challenge Description</h6>
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          9 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> Table of Contents</h4></header>
+              <ul class="toc__menu"><li><a href="#pythons-twister">Python’s Twister</a><ul><li><a href="#challenge-description">Challenge Description</a></li><li><a href="#solution">Solution</a></li></ul></li><li><a href="#white">White</a><ul><li><a href="#challenge-description-1">Challenge Description</a></li><li><a href="#solution-1">Solution</a></li></ul></li><li><a href="#scamming-factory-12">Scamming Factory (1/2)</a><ul><li><a href="#challenge-description-2">Challenge Description</a></li><li><a href="#solution-2">Solution</a></li></ul></li><li><a href="#cham">Cham</a><ul><li><a href="#challenge-description-3">Challenge Description</a></li><li><a href="#solution-3">Solution</a></li></ul></li></ul>
+            </nav>
+          </aside>
+        
+        <p>Writeups for the MetaCTF v5 2024 CTF Web Challenges that was held on 30th June 2024.</p>
+
+<h2 id="pythons-twister">Python’s Twister</h2>
+
+<h3 id="challenge-description">Challenge Description</h3>
+
 <p>Hack our admin.</p>
 
-<h6 id="solution">
-<a class="anchor" href="#solution" aria-hidden="true"><span class="octicon octicon-link"></span></a>Solution</h6>
+<h3 id="solution">Solution</h3>
+
 <p>The challenge is a simple flask application that has register/login/pass-reset functionalities. The app generates 10000 random numbers and assigns one to each user when registered as a reset token, the admin has the reset token with index 1499. The flag is stored in an environment variable and is displayed when the admin logs in.</p>
 
 <p>The first to look at is how the secrets are generated, they use python’s random and it doesn’t seem to be realistic (CTFs momento), we all know that the default random number generators in programming languages are predictable and Python is no exception. From Python <a href="https://docs.python.org/3/library/random.html">docs</a>:</p>
@@ -502,50 +524,45 @@
 
 <p>The flag:</p>
 
-<p><img src="/assets/images/metactf-writeups/metactfv5-twister-01.png" alt="metactfv5-twister-01"></p>
+<p><img src="/assets/images/metactf-writeups/metactfv5-twister-01.png" alt="metactfv5-twister-01" /></p>
 
-<h2 id="white">
-<a class="anchor" href="#white" aria-hidden="true"><span class="octicon octicon-link"></span></a>White</h2>
+<h2 id="white">White</h2>
 
-<h6 id="challenge-description-1">
-<a class="anchor" href="#challenge-description-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Challenge Description</h6>
+<h3 id="challenge-description-1">Challenge Description</h3>
+
 <p>Our intel team has found a web page which looks innocuous, but seems to be hiding secrets locally…</p>
 
-<h6 id="solution-1">
-<a class="anchor" href="#solution-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Solution</h6>
+<h3 id="solution-1">Solution</h3>
 
 <p>There is a simple LFI when we click on one of the posts button,</p>
 
-<p><img src="/assets/images/metactf-writeups/metactfv5-white-01.png" alt="metactfv5-white-01"></p>
+<p><img src="/assets/images/metactf-writeups/metactfv5-white-01.png" alt="metactfv5-white-01" /></p>
 
 <p>If we play with it a bit we will notice that it blocks any request that doesn’t contain the <code class="language-plaintext highlighter-rouge">localhost:80</code>, from this I tried different bypasses and techniques and this payload worked <code class="language-plaintext highlighter-rouge">file:///etc/passwd#localhost:80</code>:</p>
 
-<p><img src="/assets/images/metactf-writeups/metactfv5-white-02.png" alt="metactfv5-white-02"></p>
+<p><img src="/assets/images/metactf-writeups/metactfv5-white-02.png" alt="metactfv5-white-02" /></p>
 
 <p>Finally, we can read the flag at <code class="language-plaintext highlighter-rouge">/proc/self/environ</code>, but I want to go a bit further and read the application source code.</p>
 
 <p>Through <code class="language-plaintext highlighter-rouge">/proc/self/cmdline</code> we can tell that the application is called <code class="language-plaintext highlighter-rouge">app.py</code> and from looking at other different challenges I guessed that the challenge files are stored in <code class="language-plaintext highlighter-rouge">/app</code> directory with this lucky guess we can read the source at <code class="language-plaintext highlighter-rouge">/app/app.py</code></p>
 
-<p><img src="/assets/images/metactf-writeups/metactfv5-white-03.png" alt="metactfv5-white-03"></p>
+<p><img src="/assets/images/metactf-writeups/metactfv5-white-03.png" alt="metactfv5-white-03" /></p>
 
 <p>And at the same source level we can read the <code class="language-plaintext highlighter-rouge">flag.txt</code> which I knew about from reading the <code class="language-plaintext highlighter-rouge">entrypoint.sh</code></p>
 
-<p><img src="/assets/images/metactf-writeups/metactfv5-white-04.png" alt="metactfv5-white-04"></p>
+<p><img src="/assets/images/metactf-writeups/metactfv5-white-04.png" alt="metactfv5-white-04" /></p>
 
-<h2 id="scamming-factory-12">
-<a class="anchor" href="#scamming-factory-12" aria-hidden="true"><span class="octicon octicon-link"></span></a>Scamming Factory (1/2)</h2>
+<h2 id="scamming-factory-12">Scamming Factory (1/2)</h2>
 
-<h6 id="challenge-description-2">
-<a class="anchor" href="#challenge-description-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Challenge Description</h6>
+<h3 id="challenge-description-2">Challenge Description</h3>
 
 <p>I was looking for machines for my new factory and I came across this website. It seems weird and it has a lot of ads popping up. Can you take a look at it for me?</p>
 
-<h6 id="solution-2">
-<a class="anchor" href="#solution-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Solution</h6>
+<h3 id="solution-2">Solution</h3>
 
 <p>The challenge website has a weird theme where it pops-up fake scare-wares whenever you click on something, there didn’t seem to be any visible backend functionalities from the buttons/code provided, the page’s sources didn’t have anything interesting but simple items listing with no functionalities, except a small obfuscated JS code that wasn’t clear what it was doing</p>
 
-<p><img src="/assets/images/metactf-writeups/metactfv5-scamfactory-01.png" alt="metactfv5-scamfactory-01"></p>
+<p><img src="/assets/images/metactf-writeups/metactfv5-scamfactory-01.png" alt="metactfv5-scamfactory-01" /></p>
 
 <p>The obfuscated JS code that I found in <code class="language-plaintext highlighter-rouge">/js/addon.js</code></p>
 
@@ -556,21 +573,18 @@
 After debugging the code a bit, I found an array of strings that contains this path <code class="language-plaintext highlighter-rouge">/storeverysecretkeystokesdatabase</code>, and in that path I got the following response <code class="language-plaintext highlighter-rouge">{"message":"Please provide uid and key and field to get the keys go to /getverysecretkeystokesdatabase"}</code> and finally I found the flag at <code class="language-plaintext highlighter-rouge">/getverysecretkeystokesdatabase</code></p>
 
 <video controls="" width="320" height="240">
-    <source src="/assets/videos/metactf-writeups/metactfv5-scamfactory.mp4" type="video/mp4"></source>
+    <source src="/assets/videos/metactf-writeups/metactfv5-scamfactory.mp4" type="video/mp4" />
 </video>
 
-<h2 id="cham">
-<a class="anchor" href="#cham" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cham</h2>
+<h2 id="cham">Cham</h2>
 
-<h6 id="challenge-description-3">
-<a class="anchor" href="#challenge-description-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Challenge Description</h6>
+<h3 id="challenge-description-3">Challenge Description</h3>
 
 <p>Are u rich?</p>
 
 <p><strong>Hint:</strong> <em>regex + timeout = $$</em></p>
 
-<h6 id="solution-3">
-<a class="anchor" href="#solution-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Solution</h6>
+<h3 id="solution-3">Solution</h3>
 
 <p>The application is a simple shop with items listed including the flag item which costs 1337, we have 0 balance but we can get 100 balance if we use the given voucher that each users gets and is allowed to use it or any other free voucher only once.</p>
 
@@ -766,7 +780,7 @@ After debugging the code a bit, I found an array of strings that contains this p
 
 <p>At this point I wasn’t aware of the hint and had no ideas to try it out, the CTF was over and I couldn’t solve the challenge. The next day after the CTF in the morning I rechecked the website and noticed that I had many notifications in the platform, the last one was that a new hint was added to chamb challenge, felt despair a bit and continued to the challenge to see the hint. Now it mentioned regex and we know about multithreading, the first thing that came to my mind was to check for ReDos in <a href="https://book.hacktricks.xyz/pentesting-web/regular-expression-denial-of-service-redos">Hacktricks</a> interestingly there was a clone and use tool for the job <a href="https://github.com/doyensec/regexploit">regexploit</a> after giving it the regex that was used in the website we got a ReDos possible input.</p>
 
-<p><img src="/assets/images/metactf-writeups/metactfv5-chamb-01.png" alt="metactfv5-chamb-01"></p>
+<p><img src="/assets/images/metactf-writeups/metactfv5-chamb-01.png" alt="metactfv5-chamb-01" /></p>
 
 <p>Using this output I made the following exploit to get an infinite balance to buy the flag 👌+🏴= 🙂</p>
 
@@ -795,7 +809,7 @@ After debugging the code a bit, I found an array of strings that contains this p
 
 </code></pre></div></div>
 
-<p><img src="/assets/images/metactf-writeups/metactfv5-chamb-02.png" alt="metactfv5-chamb-02"></p>
+<p><img src="/assets/images/metactf-writeups/metactfv5-chamb-02.png" alt="metactfv5-chamb-02" /></p>
 
 <p>Hope you enjoyed and learned a lot while reading this 🙂</p>
 
@@ -904,7 +918,103 @@ After debugging the code a bit, I found an array of strings that contains this p
   </section>
 
 
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2024-07-10T00:00:00+03:00">July 10, 2024</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=MetaCTF+v5+2024+Writeups%20https%3A%2F%2F0x0oz.github.io%2Fwriteups%2Fmetactf-v5-2024" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F0x0oz.github.io%2Fwriteups%2Fmetactf-v5-2024" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://0x0oz.github.io/writeups/metactf-v5-2024" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="#" class="pagination--pager disabled">Previous</a>
+    
+    
+      <a href="/writeups/ncsc-training-2024" class="pagination--pager" title="NCSC Training 2024 Writeups
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    
+<div class="page__related">
+  
+  <h2 class="page__related-title">You may also enjoy</h2>
+  <div class="grid__wrapper">
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/writeups/ncsc-training-2024" rel="permalink">NCSC Training 2024 Writeups
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          6 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Those are writeups for the challenges of the NCSC Training 2024 CTF, the CTF was held on 11th July 2024 to 13th July 2024.
+</p>
+  </article>
+</div>
+
+    
   </div>
+</div>
+
+  
+  
 </div>
 
       
