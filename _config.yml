@@ -87,7 +87,7 @@ bing_site_verification:
 naver_site_verification:
 yandex_site_verification:
 baidu_site_verification:
-destination: root
+  #destination: root
 
 # Social Sharing
 twitter:
