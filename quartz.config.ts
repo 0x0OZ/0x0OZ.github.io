@@ -8,7 +8,7 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "🪴 Quartz 4.0",
+    pageTitle: "🪴 0xOZ",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
@@ -19,7 +19,7 @@ const config: QuartzConfig = {
     baseUrl: "0x0oz.github.io",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "created",
-    generateSocialImages: false,
+    generateSocialImages: true,
     theme: {
       fontOrigin: "googleFonts",
       cdnCaching: true,

@@ -1,3 +1,4 @@
+import { filterFn, mapFn, sortFn } from "./funcitons"
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
 
@@ -8,16 +9,34 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [],
   footer: Component.Footer({
     links: {
-      GitHub: "https://github.com/jackyzha0/quartz",
+      GitHub: "https://github.com/0x0oz/",
       "Discord Community": "https://discord.gg/cRFFHYye7t",
     },
   }),
 }
 
+
+
+// the defaults
+let breadcrumbs = Component.Breadcrumbs({
+  spacerSymbol: "❯", // symbol between crumbs
+  rootName: "Home", // name of first/root element
+  resolveFrontmatterTitle: true, // whether to resolve folder names through frontmatter titles
+  hideOnRoot: true, // whether to hide breadcrumbs on root `index.md` page
+  showCurrentPage: true, // whether to display the current page in the breadcrumbs
+})
+
+let explorer = Component.Explorer({
+  mapFn: mapFn,
+  sortFn: sortFn,
+  filterFn: filterFn,
+  order: ["filter", "sort", "map"],
+})
+
 // components for pages that display a single page (e.g. a single note)
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
-    Component.Breadcrumbs(),
+    breadcrumbs,
     Component.ArticleTitle(),
     Component.ContentMeta(),
     Component.TagList(),
@@ -27,7 +46,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.Explorer(),
+    explorer,
   ],
   right: [
     Component.Graph(),
@@ -38,13 +57,15 @@ export const defaultContentPageLayout: PageLayout = {
 
 // components for pages that display lists of pages  (e.g. tags or folders)
 export const defaultListPageLayout: PageLayout = {
-  beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
+  beforeBody: [breadcrumbs, Component.ArticleTitle(), Component.ContentMeta()],
   left: [
     Component.PageTitle(),
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.Explorer(),
+    explorer,
   ],
   right: [],
 }
+
+
