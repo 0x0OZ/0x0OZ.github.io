@@ -2,22 +2,11 @@ import { filterFn, mapFn, sortFn } from "./funcitons"
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
 
-// components shared across all pages
-export const sharedPageComponents: SharedLayout = {
-  head: Component.Head(),
-  header: [],
-  afterBody: [],
-  footer: Component.Footer({
-    links: {
-      GitHub: "https://github.com/0x0oz/",
-      LinkedIn: "https://www.linkedin.com/in/0xoz/",
-      "RSS": "/index.xml",
-      "Email": "mailto:0xoz@ieee.org",
-      Discord: "@0x0oz",
-      // "Discord Community": "https://discord.gg/cRFFHYye7t",
-    },
-  }),
-}
+
+let recentNotes = Component.RecentNotes({
+  title: "Recent Notes",
+  limit: 5,
+})
 
 
 // the defaults
@@ -35,6 +24,25 @@ let explorer = Component.Explorer({
   filterFn: filterFn,
   order: ["filter", "sort", "map"],
 })
+
+
+
+// components shared across all pages
+export const sharedPageComponents: SharedLayout = {
+  head: Component.Head(),
+  header: [],
+  afterBody: [recentNotes],
+  footer: Component.Footer({
+    links: {
+      GitHub: "https://github.com/0x0oz/",
+      LinkedIn: "https://www.linkedin.com/in/0xoz/",
+      "RSS": "/index.xml",
+      "Email": "mailto:0xoz@ieee.org",
+      Discord: "@0x0oz",
+      // "Discord Community": "https://discord.gg/cRFFHYye7t",
+    },
+  }),
+}
 
 // components for pages that display a single page (e.g. a single note)
 export const defaultContentPageLayout: PageLayout = {
