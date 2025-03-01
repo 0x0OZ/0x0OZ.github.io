@@ -3,9 +3,9 @@ layout: posts
 title: "NCSC Training 2024 Writeups"
 permalink: /writeups/ncsc-training-2024
 categories: [CTF, Writeups]
-tags: [ctf, writeups, ncsc-training-2024]
-header:
-    teaser: "/static/images/ncsc-training-writeups/ncsc-training-2024.jpg"
+tags: [ctf, writeups, web, forensics, crypto]
+socialImage: "images/ncsc-training-writeups/ncsc-training-2024.jpg"
+
 ---
 
 Here are the write-ups for the challenges from the NCSC Training 2024 CTF, which took place from July 11th to July 13th, 2024.

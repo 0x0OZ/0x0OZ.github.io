@@ -1,8 +1,8 @@
 ---
 layout: posts
 title: "DeadSec CTF 2024 Web Writeups"
-tags: [ctf, writeups, deadsec-ctf]
-socialImage: "/static/images/deadsec-writeups/deadsec.png"
+tags: [ctf, writeups,web]
+socialImage: "images/deadsec-writeups/deadsec.png"
 ---
 
 This is a collection of writeups for the Web challenges of DeadSec CTF 2024. The CTF was held by the [DeadSec](https://deadsec.ctf.ae/) team. The CTF was held on 28th July 2024. My team scored place 48/619 with 1081 points.

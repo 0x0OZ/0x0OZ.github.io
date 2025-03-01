@@ -10,7 +10,7 @@ export const sharedPageComponents: SharedLayout = {
   footer: Component.Footer({
     links: {
       GitHub: "https://github.com/0x0oz/",
-      LinkedIn: "https://www.linkedin.com/in/0x0oz/",
+      LinkedIn: "https://www.linkedin.com/in/0xoz/",
       "RSS": "/index.xml",
       "Email": "mailto:0xoz@ieee.org",
       Discord: "@0x0oz",
@@ -18,7 +18,6 @@ export const sharedPageComponents: SharedLayout = {
     },
   }),
 }
-
 
 
 // the defaults
