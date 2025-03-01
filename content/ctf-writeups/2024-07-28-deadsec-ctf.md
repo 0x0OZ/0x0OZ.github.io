@@ -1,12 +1,10 @@
 ---
 layout: posts
 title: "DeadSec CTF 2024 Web Writeups"
-permalink: /test
 categories: [CTF, Writeups]
 tags: [ctf, writeups, deadsec-ctf]
 header:
     teaser: "/static/images/deadsec-writeups/deadsec.png"
-socialImage: "/static/images/deadsec-writeups/deadsec.png"
 ---
 
 This is a collection of writeups for the Web challenges of DeadSec CTF 2024. The CTF was held by the [DeadSec](https://deadsec.ctf.ae/) team. The CTF was held on 28th July 2024. My team scored place 48/619 with 1081 points.
@@ -24,7 +22,8 @@ I started analyzing the provided source code, there is only one interesting file
 
 ![EzStart-Code](/static/images/deadsec-writeups/ezstart-01.png)
 
-In the code, we can see that we can upload any kind of file regarding the written filters because they were pointless (no prevention after the checks). Still, the notable thing is that anything we upload is going to be deleted at the end through `unlink()`, moreover, if we upload a file with `< 10MB` size it will be moved from PHP's uploads tmp folder to accessible `/var/www/html/tmp` folder then will be removed at the end.
+In the code, we can see that we can uploahttps://0x0oz.github.io/ctf-writeups/2024-07-28-deadsec-ctf
+d any kind of file regarding the written filters because they were pointless (no prevention after the checks). Still, the notable thing is that anything we upload is going to be deleted at the end through `unlink()`, moreover, if we upload a file with `< 10MB` size it will be moved from PHP's uploads tmp folder to accessible `/var/www/html/tmp` folder then will be removed at the end.
 
 For the upload filename, we can't specify anything existent to overwrite or cause deletion like the index.html or anything, we can't also do path traversal because the basename and the ext were only taken from the filename
 
