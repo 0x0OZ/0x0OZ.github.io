@@ -1,7 +1,6 @@
 ---
 layout: posts
 title: "DeadSec CTF 2024 Web Writeups"
-categories: [CTF, Writeups]
 tags: [ctf, writeups, deadsec-ctf]
 header:
     teaser: "/static/images/deadsec-writeups/deadsec.png"
