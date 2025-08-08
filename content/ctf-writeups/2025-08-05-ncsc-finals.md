@@ -365,4 +365,21 @@ newWindow2.frames.length
 That is a more elegant and efficient method to go with, with full accuracy, as the timing attack is not always accurate and requires a stable network connection on the target server, which wasn't the case during the CTF when many players were spamming it with different filters.
 
 
+## Cloud Hack
 
+..
+
+## Conclusion
+
+
+**Is it a good CTF, or not?**
+If I wasn't able to solve the challenges above, I would have said "too diffucult" or "authors don't want any solves". But because I did I will descibe it in one word: "Beautiful"
+Whether we like it or not, the challenges were different from regular boring CTFs where you just need to find online writeup to get the actual idea behind the unreal challenge to solve it and get the flag. There weren't too complex SQLi bypasses or php filters bypasses that never used in production in this period of time.
+
+**Did we learn anything?**
+
+Learning is different from knowing, we knew few stuff about JS, XSS, and more about the web in whysoneat, and same goes for other challenges. I don't say it's useless, actually this is the only *learning* method I am familar with. We could use that _learning_ or _knowledge_ in the future as it will always be helpful in a way or another.
+However, what really would be a great learning is to find out how could we know this information beforehand, i.e how to know what required information needed to be known during a CTF for a challenge / code review and so on.. For example in whysoneat let's assume the author had that path closed for solving the challenge using time oracles I wouldn't be able to solve the challenge or come out with the idea of using JS popup.
+If someone somehow was able to get to level where he can find out what is needed for a problem to be resolved, that level for me is what all it takes to become a zeroday researcher.
+
+Till the merciful guide us to what is to be done for it to be.
