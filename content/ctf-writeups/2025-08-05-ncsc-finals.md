@@ -2,7 +2,7 @@
 layout: posts
 title: "NCSC CTF Finals 2025 Web Writeup"
 tags: [ctf, writeups,web]
-socialImage: "images/ncsc-finals-2025/logo.jpg"
+socialImage: "images/ncsc-finals-2025//logo.jpg"
 ---
 
 # NCSC Finals Web Challenges Writeups
@@ -23,7 +23,7 @@ We will be working against the local source code provided,
 
 Here is a full tree of the codebase for a start
 
-![image-20250807003436905](/static/images/ncsc-finals-2025image-20250807003436905.png)
+![image-20250807003436905](/static/images/ncsc-finals-2025/image-20250807003436905.png)
 
 ### Bypass /bot filters
 
@@ -71,7 +71,7 @@ There are different approaches to go through codebases, as we could assuming the
 
 We can provide any input as long as it starts with http(s):// prefix which will be quoted with `quote()` and remove the `:` which makes it an invalid URL, we can go through that using `oz@attacker.com/`. This works because it's making the text before `@` as a username (more info [here](https://developer.mozilla.org/en-US/docs/Web/URI/Reference/Authority))
 
-![image-20250807210339998](/static/images/ncsc-finals-2025image-20250807210339998.png)
+![image-20250807210339998](/static/images/ncsc-finals-2025/image-20250807210339998.png)
 
 ### Understanding /imageproxy
 
@@ -154,11 +154,11 @@ Again, this is an internal app, though we can't directly hit it using `/imagepro
 
  Let's modify the `entrypoint.sh` and the rebuild script. (Updated the host to `0.0.0.0` and added port binding for `8124`)
 
-![image-20250808012847331](/static/images/ncsc-finals-2025image-20250808012847331.png)
+![image-20250808012847331](/static/images/ncsc-finals-2025/image-20250808012847331.png)
 
 We can then test ideas on `http://localhost:8124/videos?filter=` If we try `NCSC` we will see the flag returned in the response with the related youtube video being loaded. 
 
-![image-20250808104913356](/static/images/ncsc-finals-2025image-20250808104913356.png)
+![image-20250808104913356](/static/images/ncsc-finals-2025/image-20250808104913356.png)
 
 We could try to fetch the page content with the filter and return the response to us using XSS inside the SVG file, but that won't work because the SOP will block reading the response from that endpoint.
 
@@ -179,7 +179,7 @@ With a simple Google search for SVG XSS PoC, I took the payload from [this](http
 </svg>
 ```
 
-![image-20250808111255829](/static/images/ncsc-finals-2025image-20250808111255829.png)
+![image-20250808111255829](/static/images/ncsc-finals-2025/image-20250808111255829.png)
 
 Great, now let's try to use `<iframe>` while the port is still exposed to test if that will work out
 
@@ -195,7 +195,7 @@ Great, now let's try to use `<iframe>` while the port is still exposed to test i
 </svg>
 ```
 
-![image-20250808123300236](/static/images/ncsc-finals-2025image-20250808123300236.png)
+![image-20250808123300236](/static/images/ncsc-finals-2025/image-20250808123300236.png)
 
 This simple payload is not going to work out in the poc because we are inside `.svg`,  not a real `.html` page. During the CTF, I didn't need to worry much about investigating workarounds because AI was allowed, which allowed me to generate a full working payload using it.. Let's keep diving,
 
@@ -215,7 +215,7 @@ Searching around, we can find a method using `createElementNS` and using the `do
 </svg>
 ```
 
-![image-20250808143813169](/static/images/ncsc-finals-2025image-20250808143813169.png)
+![image-20250808143813169](/static/images/ncsc-finals-2025/image-20250808143813169.png)
 
 Great, now with good coding experience, we can build something that will load iframes containing the next character for our flag until a match hits, then do the same for the next character in the flag, and so on. Here is the payload that was generated using chatgpt and worked out during the CTF
 
@@ -358,9 +358,9 @@ newWindow2.frames.length
 
 
 
-![image-20250808153602052](/static/images/ncsc-finals-2025image-20250808153602052.png)
+![image-20250808153602052](/static/images/ncsc-finals-2025/image-20250808153602052.png)
 
-![image-20250808153642879](/static/images/ncsc-finals-2025image-20250808153642879.png)
+![image-20250808153642879](/static/images/ncsc-finals-2025/image-20250808153642879.png)
 
 That is a more elegant and efficient method to go with, with full accuracy, as the timing attack is not always accurate and requires a stable network connection on the target server, which wasn't the case during the CTF when many players were spamming it with different filters.
 
